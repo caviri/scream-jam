@@ -23,6 +23,10 @@ func _physics_process(_delta):
 func select_target_switch():
 	target_switch = switches[randi() % switches.size()]
 	$NavigationAgent2D.set_target_position(target_switch.global_position)
+
+
+func _on_navigation_agent_2d_target_reached():
+	select_target_switch()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
@@ -38,3 +42,6 @@ texture = ExtResource("1_lwqd4")
 shape = SubResource("RectangleShape2D_kimlc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 100.0
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
