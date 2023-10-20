@@ -28,7 +28,11 @@ func select_target_switch():
 
 
 func _on_navigation_agent_2d_target_reached():
+	$Cooldown.start()
 	target_switch.turn_on()
+	
+
+func _on_cooldown_timeout():
 	select_target_switch()
 "
 
@@ -46,4 +50,9 @@ shape = SubResource("RectangleShape2D_kimlc")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 100.0
 
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
