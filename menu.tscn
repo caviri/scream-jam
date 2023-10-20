@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c5x2nk1x8uo71"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 239.0
+offset_right = 704.0
+offset_bottom = 344.0
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 513.0
+offset_top = 376.0
+offset_right = 705.0
+offset_bottom = 481.0
+text = "DIE"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 439.0
+offset_top = 169.0
+offset_right = 762.0
+offset_bottom = 261.0
+text = "BIENVENIDO A VAMPIROS EN LAS MALLAS"
