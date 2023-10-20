@@ -23,3 +23,10 @@ offset_left = 19.0
 offset_top = 576.0
 offset_right = 1133.0
 offset_bottom = 647.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 23.0
+offset_right = 635.0
+offset_bottom = 87.0
+text = "HOUSE LEVEL"
