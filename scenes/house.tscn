@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://chr1edlu7724p"]
+
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_db1io"]
+
+[node name="house" type="Node2D"]
+script = ExtResource("1_db1io")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 102.0
+offset_bottom = 647.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 1047.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 649.0
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 35.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 73.0
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 19.0
+offset_top = 576.0
+offset_right = 1133.0
+offset_bottom = 647.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 23.0
+offset_right = 635.0
+offset_bottom = 87.0
+text = "HOUSE LEVEL"
+
+[node name="Die" type="Button" parent="."]
+offset_left = 121.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 58.0
+text = "DIE"
+
+[connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
