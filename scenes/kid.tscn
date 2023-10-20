@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://35bidx5ifvad"]
+
+[ext_resource type="Texture2D" uid="uid://c1bsauysa1j6t" path="res://icon.svg" id="1_lwqd4"]
+
+[sub_resource type="GDScript" id="GDScript_qxhbh"]
+script/source = "extends CharacterBody2D
+
+@export var speed: int = 200
+
+var switches: Array[Node]
+var target_switch: Node
+
+func _ready():
+	switches = get_tree().get_nodes_in_group(\"switchs\")
+	select_target_switch()
+	
+func _physics_process(_delta):
+	var next_path_position: Vector2 = $NavigationAgent2D.get_next_path_position()
+	var direction: Vector2 = (next_path_position - global_position).normalized()
+	velocity = direction * speed
+	move_and_slide()
+	
+func select_target_switch():
+	target_switch = switches[randi() % switches.size()]
+	$NavigationAgent2D.set_target_position(target_switch.global_position)
+
+
+func _on_navigation_agent_2d_target_reached():
+	select_target_switch()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
+size = Vector2(126, 128)
+
+[node name="kid" type="CharacterBody2D"]
+script = SubResource("GDScript_qxhbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lwqd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kimlc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 100.0
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
