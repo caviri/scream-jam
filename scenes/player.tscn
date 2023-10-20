@@ -420,4 +420,4 @@ script = ExtResource("1_cvuch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bclvy")
-animation = &"death"
+animation = &"back_walk"

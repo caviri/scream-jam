@@ -14,10 +14,6 @@ config/name="Test"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
-[display]
-
-window/stretch/scale=5.0
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
