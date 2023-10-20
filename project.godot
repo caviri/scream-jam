@@ -13,7 +13,10 @@ config_version=5
 config/name="Test"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=5.0
 
 [rendering]
 

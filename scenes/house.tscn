@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://chr1edlu7724p"]
 
-[ext_resource type="Script" path="res://scripts/house.gd" id="1_db1io"]
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_4asmq"]
 
 [node name="house" type="Node2D"]
-script = ExtResource("1_db1io")
+script = ExtResource("1_4asmq")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 102.0
