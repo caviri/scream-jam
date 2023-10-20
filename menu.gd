@@ -13,3 +13,7 @@ func _process(delta):
 
 func _on_die_pressed():
 	get_tree().quit()
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file("res://house.tscn")

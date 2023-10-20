@@ -26,4 +26,5 @@ offset_right = 762.0
 offset_bottom = 261.0
 text = "BIENVENIDO A VAMPIROS EN LAS MALLAS"
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
