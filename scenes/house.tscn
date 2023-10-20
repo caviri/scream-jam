@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://chr1edlu7724p"]
+[gd_scene load_steps=5 format=3 uid="uid://chr1edlu7724p"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4asmq"]
+[ext_resource type="PackedScene" uid="uid://35bidx5ifvad" path="res://scenes/kid.tscn" id="2_il31o"]
+[ext_resource type="PackedScene" uid="uid://q07ye2cqdgak" path="res://scenes/switch.tscn" id="3_guec2"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qlap0"]
+vertices = PackedVector2Array(104, 75, 103, 74, 1049, 73, 1048, 576, 102, 576)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(104, 75, 102, 576, 1048, 576, 1049, 73, 103, 74)])
 
 [node name="house" type="Node2D"]
 script = ExtResource("1_4asmq")
@@ -40,5 +47,29 @@ offset_top = 15.0
 offset_right = 194.0
 offset_bottom = 58.0
 text = "DIE"
+
+[node name="kid" parent="." instance=ExtResource("2_il31o")]
+position = Vector2(561, 319)
+
+[node name="Switch" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(109, 164)
+
+[node name="Switch2" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(1044, 166)
+
+[node name="Switch3" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(103, 511)
+
+[node name="Switch4" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(1042, 499)
+
+[node name="Switch5" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(577, 82)
+
+[node name="Switch6" parent="." instance=ExtResource("3_guec2")]
+position = Vector2(576, 581)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_qlap0")
 
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
