@@ -1,15 +1,18 @@
-[gd_scene format=3 uid="uid://c5x2nk1x8uo71"]
+[gd_scene load_steps=2 format=3 uid="uid://c5x2nk1x8uo71"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_pgj5i"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pgj5i")
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 offset_left = 512.0
 offset_top = 239.0
 offset_right = 704.0
 offset_bottom = 344.0
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Die" type="Button" parent="."]
 offset_left = 513.0
 offset_top = 376.0
 offset_right = 705.0
@@ -22,3 +25,5 @@ offset_top = 169.0
 offset_right = 762.0
 offset_bottom = 261.0
 text = "BIENVENIDO A VAMPIROS EN LAS MALLAS"
+
+[connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
