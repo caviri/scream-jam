@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://q07ye2cqdgak"]
+[gd_scene load_steps=4 format=3 uid="uid://q07ye2cqdgak"]
 
 [ext_resource type="Script" path="res://scripts/switch.gd" id="1_2ngyy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktwfk"]
-size = Vector2(36, 36)
+[ext_resource type="Texture2D" uid="uid://haidpmv1r60e" path="res://art/objects/switch_placeholder.png" id="2_fbi6e"]
+[ext_resource type="Texture2D" uid="uid://c8wngqwb8ihps" path="res://art/objects/light_placeholder.png" id="3_2gchh"]
 
 [node name="Switch" type="StaticBody2D" groups=["switches"]]
 script = ExtResource("1_2ngyy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.28125, 0.28125)
+scale = Vector2(0.042, 0.05)
+texture = ExtResource("2_fbi6e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ktwfk")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.186564, 0.186564)
+texture = ExtResource("3_2gchh")

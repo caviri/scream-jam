@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://35bidx5ifvad"]
+[gd_scene load_steps=4 format=3 uid="uid://35bidx5ifvad"]
+
+[ext_resource type="Texture2D" uid="uid://0ual5g8upbcp" path="res://art/characters/pngegg.png" id="1_ufwvf"]
 
 [sub_resource type="GDScript" id="GDScript_qxhbh"]
 script/source = "extends CharacterBody2D
@@ -37,12 +39,14 @@ func _on_cooldown_timeout():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
-size = Vector2(126, 128)
+size = Vector2(92, 92)
 
 [node name="kid" type="CharacterBody2D"]
 script = SubResource("GDScript_qxhbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.228, 0.228)
+texture = ExtResource("1_ufwvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kimlc")

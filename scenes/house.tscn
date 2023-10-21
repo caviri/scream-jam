@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://314viho1tt7w" path="res://scenes/player.tscn" id="5_esyff"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qlap0"]
-vertices = PackedVector2Array(104, 75, 103, 74, 1049, 73, 1048, 576, 102, 576)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(104, 75, 102, 576, 1048, 576, 1049, 73, 103, 74)])
+vertices = PackedVector2Array(-4, -162, 288, -162, 288, 162, -288, 162, -288, -162)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-288, -162, -288, 162, 288, 162, 288, -162, -4, -162)])
 
 [node name="house2" type="Node2D"]
 script = ExtResource("1_4asmq")
@@ -55,27 +55,29 @@ offset_bottom = -19.0
 text = "DIE"
 
 [node name="kid" parent="." instance=ExtResource("2_il31o")]
-position = Vector2(561, 319)
+position = Vector2(35, 6)
+scale = Vector2(0.1, 0.1)
 
 [node name="Switch" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(109, 164)
+position = Vector2(-252, -162)
 
 [node name="Switch2" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(1044, 166)
+position = Vector2(254, -163)
 
 [node name="Switch3" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(103, 511)
+position = Vector2(-288, 161)
 
 [node name="Switch4" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(1042, 499)
+position = Vector2(288, -4)
 
 [node name="Switch5" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(577, 82)
+position = Vector2(-14, -162)
 
 [node name="Switch6" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(576, 581)
+position = Vector2(75, 162)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(0, -1)
 navigation_polygon = SubResource("NavigationPolygon_qlap0")
 
 [node name="player" parent="NavigationRegion2D" instance=ExtResource("5_esyff")]
