@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://chr1edlu7724p"]
+[gd_scene load_steps=6 format=3 uid="uid://chr1edlu7724p"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4asmq"]
 [ext_resource type="PackedScene" uid="uid://35bidx5ifvad" path="res://scenes/kid.tscn" id="2_il31o"]
 [ext_resource type="PackedScene" uid="uid://q07ye2cqdgak" path="res://scenes/switch.tscn" id="3_guec2"]
+[ext_resource type="PackedScene" uid="uid://314viho1tt7w" path="res://scenes/player.tscn" id="5_esyff"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qlap0"]
 vertices = PackedVector2Array(104, 75, 103, 74, 1049, 73, 1048, 576, 102, 576)
@@ -76,5 +77,7 @@ position = Vector2(576, 581)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_qlap0")
+
+[node name="player" parent="NavigationRegion2D" instance=ExtResource("5_esyff")]
 
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
