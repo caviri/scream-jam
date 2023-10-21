@@ -13,6 +13,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if is_turned_on:
+		get_node("Sprite2D2").show()
+	else:
+		get_node("Sprite2D2").hide()
 	pass
 
 func turn_on():
