@@ -10,7 +10,7 @@ vertices = PackedVector2Array(104, 75, 103, 74, 1049, 73, 1048, 576, 102, 576)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(104, 75, 102, 576, 1048, 576, 1049, 73, 103, 74)])
 
-[node name="house" type="Node2D"]
+[node name="house2" type="Node2D"]
 script = ExtResource("1_4asmq")
 
 [node name="Panel" type="Panel" parent="."]
