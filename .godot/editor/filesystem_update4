@@ -1,9 +1,0 @@
-res://scenes/menu.tscn
-res://scenes/player.tscn
-res://scenes/house.tscn
-res://scenes/kid.tscn
-res://scenes/switch.tscn
-res://scripts/switch.gd
-res://scripts/globals.gd
-res://scripts/house.gd
-res://scripts/menu.gd
