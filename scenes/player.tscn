@@ -428,3 +428,6 @@ shape = SubResource("CapsuleShape2D_e5icj")
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_bclvy")
 animation = &"back_walk"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
