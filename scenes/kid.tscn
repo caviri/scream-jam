@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://35bidx5ifvad"]
+
+[sub_resource type="GDScript" id="GDScript_qxhbh"]
+script/source = "extends CharacterBody2D
+
+@export var speed: int = 200
+
+var switches: Array[Node]
+var target_switch: Node
+
+func _ready():
+	switches = get_tree().get_nodes_in_group(\"switches\")
+	select_target_switch()
+	
+func _physics_process(_delta):
+	var next_path_position: Vector2 = $NavigationAgent2D.get_next_path_position()
+	var direction: Vector2 = (next_path_position - global_position).normalized()
+	velocity = direction * speed
+	move_and_slide()
+	
+func select_target_switch():
+	if not Globals.all_lights_up:
+		target_switch = null
+		while target_switch == null or target_switch.is_turned_on:
+			target_switch = switches[randi() % switches.size()]
+			
+		$NavigationAgent2D.set_target_position(target_switch.global_position)
+
+
+func _on_navigation_agent_2d_target_reached():
+	$Cooldown.start()
+	target_switch.turn_on()
+	
+
+func _on_cooldown_timeout():
+	select_target_switch()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
+size = Vector2(126, 128)
+
+[node name="kid" type="CharacterBody2D"]
+script = SubResource("GDScript_qxhbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kimlc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 100.0
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
