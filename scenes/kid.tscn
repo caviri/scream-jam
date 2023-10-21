@@ -11,7 +11,7 @@ var switches: Array[Node]
 var target_switch: Node
 
 func _ready():
-	switches = get_tree().get_nodes_in_group(\"switches\")
+	switches = get_tree().get_nodes_in_group(\"area_switchs\")
 	select_target_switch()
 	
 func _physics_process(_delta):
@@ -21,18 +21,18 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 func select_target_switch():
-	if not Globals.all_lights_up:
+	if Globals.lights_up < len(switches):
 		target_switch = null
 		while target_switch == null or target_switch.is_turned_on:
 			target_switch = switches[randi() % switches.size()]
 			
 		$NavigationAgent2D.set_target_position(target_switch.global_position)
+	else:
+		$Cooldown.start()
 
 
 func _on_navigation_agent_2d_target_reached():
 	$Cooldown.start()
-	target_switch.turn_on()
-	
 
 func _on_cooldown_timeout():
 	select_target_switch()

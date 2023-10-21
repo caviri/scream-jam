@@ -10,7 +10,7 @@ func _ready():
 func _physics_process(delta):
 	player_movements(delta)
 	
-func player_movements(delta):
+func player_movements(_delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"

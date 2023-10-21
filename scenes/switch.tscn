@@ -15,3 +15,5 @@ texture = ExtResource("2_fbi6e")
 visible = false
 scale = Vector2(0.186564, 0.186564)
 texture = ExtResource("3_2gchh")
+
+[node name="Area2D" type="Area2D" parent="."]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4asmq"]
 [ext_resource type="PackedScene" uid="uid://35bidx5ifvad" path="res://scenes/kid.tscn" id="2_il31o"]
-[ext_resource type="PackedScene" uid="uid://q07ye2cqdgak" path="res://scenes/switch.tscn" id="3_guec2"]
+[ext_resource type="PackedScene" uid="uid://cv3aojk7xwcfm" path="res://scenes/area_switch.tscn" id="4_i8l8d"]
 [ext_resource type="PackedScene" uid="uid://314viho1tt7w" path="res://scenes/player.tscn" id="5_esyff"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qlap0"]
@@ -58,28 +58,34 @@ text = "DIE"
 position = Vector2(35, 6)
 scale = Vector2(0.1, 0.1)
 
-[node name="Switch" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(-252, -162)
-
-[node name="Switch2" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(254, -163)
-
-[node name="Switch3" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(-288, 161)
-
-[node name="Switch4" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(288, -4)
-
-[node name="Switch5" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(-14, -162)
-
-[node name="Switch6" parent="." instance=ExtResource("3_guec2")]
-position = Vector2(75, 162)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(0, -1)
 navigation_polygon = SubResource("NavigationPolygon_qlap0")
 
 [node name="player" parent="NavigationRegion2D" instance=ExtResource("5_esyff")]
+
+[node name="Area2D" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(-13, -161)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area_switch" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(-252, -162)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(254, -162)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D3" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(288, -4)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D4" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(75, 163)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D5" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(-287, 161)
+scale = Vector2(0.15, 0.15)
 
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
