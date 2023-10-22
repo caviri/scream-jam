@@ -18,11 +18,21 @@ func player_movements(_delta):
 		velocity.x = SPEED
 		velocity.y = 0
 		
+		if $Timer.time_left <= 0:
+			$AudioStreamPlayer2D.pitch_scale = randf_range(0.8, 1.2)
+			$AudioStreamPlayer2D.play()
+			$Timer.start(0.2)
+		
 	elif Input.is_action_pressed("ui_left"):
 		current_dir = "left"
 		play_anim(1)
 		velocity.x = -SPEED
 		velocity.y = 0
+		
+		if $Timer.time_left <= 0:
+			$AudioStreamPlayer2D.pitch_scale = randf_range(0.8, 1.2)
+			$AudioStreamPlayer2D.play()
+			$Timer.start(0.2)
 		
 	elif Input.is_action_pressed("ui_down"):
 		current_dir = "down"
@@ -30,15 +40,27 @@ func player_movements(_delta):
 		velocity.x = 0
 		velocity.y = SPEED
 		
+		if $Timer.time_left <= 0:
+			$AudioStreamPlayer2D.pitch_scale = randf_range(0.8, 1.2)
+			$AudioStreamPlayer2D.play()
+			$Timer.start(0.2)
+		
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = -SPEED
+		
+		if $Timer.time_left <= 0:
+			$AudioStreamPlayer2D.pitch_scale = randf_range(0.8, 1.2)
+			$AudioStreamPlayer2D.play()
+			$Timer.start(0.2)
 	else:
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
+		
+
 		
 	move_and_slide()
 	
