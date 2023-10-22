@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv3aojk7xwcfm"]
 
-[ext_resource type="Script" path="res://scenes/area_switch.gd" id="1_t8cla"]
+[ext_resource type="Script" path="res://scripts/area_switch.gd" id="1_5ukbc"]
 [ext_resource type="Texture2D" uid="uid://haidpmv1r60e" path="res://art/objects/switch_placeholder.png" id="1_v7n0f"]
 [ext_resource type="Texture2D" uid="uid://c8wngqwb8ihps" path="res://art/objects/light_placeholder.png" id="2_6t2gu"]
 
@@ -8,7 +8,7 @@
 size = Vector2(120, 159)
 
 [node name="Area2D" type="Area2D" groups=["area_switchs"]]
-script = ExtResource("1_t8cla")
+script = ExtResource("1_5ukbc")
 
 [node name="Switch" type="Sprite2D" parent="."]
 scale = Vector2(0.308564, 0.308564)

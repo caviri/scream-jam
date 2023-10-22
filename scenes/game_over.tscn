@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcr78a60o5s0x"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_kfol5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kfol5")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 239.0
+offset_right = 704.0
+offset_bottom = 344.0
+text = "PLAY"
+
+[node name="Die" type="Button" parent="."]
+offset_left = 513.0
+offset_top = 376.0
+offset_right = 705.0
+offset_bottom = 481.0
+text = "DIE"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 449.0
+offset_top = 137.0
+offset_right = 772.0
+offset_bottom = 229.0
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
