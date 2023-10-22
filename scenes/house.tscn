@@ -58,7 +58,7 @@ position = Vector2(11, -150)
 scale = Vector2(0.15, 0.15)
 
 [node name="Area2D2" parent="." instance=ExtResource("4_i8l8d")]
-position = Vector2(161, -17)
+position = Vector2(159, -14)
 scale = Vector2(0.15, 0.15)
 
 [node name="Area2D3" parent="." instance=ExtResource("4_i8l8d")]

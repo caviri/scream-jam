@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dby0s37wqmeqs" path="res://art/tileset/0x72_16x16DungeonTileset.v5.png" id="1_xid7x"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_2dpxn"]
-vertices = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fb4fs"]
+vertices = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hkjs"]
 texture = ExtResource("1_xid7x")
@@ -253,7 +253,7 @@ texture = ExtResource("1_xid7x")
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2dpxn")
+2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fb4fs")
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
