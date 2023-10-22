@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5x2nk1x8uo71"]
+[gd_scene load_steps=8 format=3 uid="uid://c5x2nk1x8uo71"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nmfvj"]
 [ext_resource type="Texture2D" uid="uid://b8y47ovcwmdao" path="res://art/gui/menuImg.png" id="2_8eaef"]
+[ext_resource type="AudioStream" uid="uid://b8dbjqft5qacf" path="res://art/sounds/inro_menu.wav" id="2_q6yph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o5nt"]
 bg_color = Color(0.06, 0.34, 0, 0.52)
@@ -14,9 +15,6 @@ bg_color = Color(0.52, 0.05, 0.07, 0.56)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp3nu"]
 bg_color = Color(0.52, 0.07, 0, 1)
-
-[ext_resource type="AudioStream" uid="uid://b8dbjqft5qacf" path="res://art/sounds/inro_menu.wav" id="2_q6yph"]
-
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nmfvj")
@@ -44,10 +42,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wifwt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hp3nu")
 text = "DIE"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_q6yph")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_q6yph")
-autoplay = true
