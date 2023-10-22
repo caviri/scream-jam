@@ -1,30 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5x2nk1x8uo71"]
+[gd_scene load_steps=7 format=3 uid="uid://c5x2nk1x8uo71"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nmfvj"]
+[ext_resource type="Texture2D" uid="uid://b8y47ovcwmdao" path="res://art/gui/menuImg.png" id="2_8eaef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o5nt"]
+bg_color = Color(0.06, 0.34, 0, 0.52)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr1yd"]
+bg_color = Color(0, 0.44, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wifwt"]
+bg_color = Color(0.52, 0.05, 0.07, 0.56)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp3nu"]
+bg_color = Color(0.52, 0.07, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nmfvj")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(584.667, 326)
+scale = Vector2(0.607407, 0.607407)
+texture = ExtResource("2_8eaef")
+
 [node name="Play" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 239.0
-offset_right = 704.0
-offset_bottom = 344.0
+offset_left = 364.0
+offset_top = 305.0
+offset_right = 556.0
+offset_bottom = 410.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1o5nt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mr1yd")
 text = "PLAY"
 
 [node name="Die" type="Button" parent="."]
-offset_left = 513.0
-offset_top = 376.0
-offset_right = 705.0
-offset_bottom = 481.0
+offset_left = 627.0
+offset_top = 305.0
+offset_right = 819.0
+offset_bottom = 410.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wifwt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hp3nu")
 text = "DIE"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 439.0
-offset_top = 169.0
-offset_right = 762.0
-offset_bottom = 261.0
-text = "BIENVENIDO A VAMPIROS EN LAS MALLAS"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
