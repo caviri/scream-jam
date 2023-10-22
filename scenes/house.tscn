@@ -77,6 +77,22 @@ scale = Vector2(0.15, 0.15)
 position = Vector2(-155, -12)
 scale = Vector2(0.15, 0.15)
 
+[node name="Area2D5" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(385, 32)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D6" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(126, 106)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D7" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(-27, -25)
+scale = Vector2(0.15, 0.15)
+
+[node name="Area2D8" parent="." instance=ExtResource("4_i8l8d")]
+position = Vector2(35, -22)
+scale = Vector2(0.15, 0.15)
+
 [node name="kid" parent="." instance=ExtResource("2_il31o")]
 position = Vector2(35, 6)
 scale = Vector2(0.1, 0.1)
