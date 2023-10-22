@@ -10,9 +10,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if is_turned_on:
-		get_node("Light").show()
+		$PointLight2D.show()
 	else:
-		get_node("Light").hide()
+		$PointLight2D.hide()
 	pass
 
 func _on_body_entered(body):

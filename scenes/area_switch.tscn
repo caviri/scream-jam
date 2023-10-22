@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/area_switch.gd" id="1_5ukbc"]
 [ext_resource type="Texture2D" uid="uid://haidpmv1r60e" path="res://art/objects/switch_placeholder.png" id="1_v7n0f"]
-[ext_resource type="Texture2D" uid="uid://c8wngqwb8ihps" path="res://art/objects/light_placeholder.png" id="2_6t2gu"]
+[ext_resource type="Texture2D" uid="uid://bcq772kbtrpeu" path="res://art/circle.png" id="4_rnyau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8vot"]
 size = Vector2(120, 159)
@@ -14,11 +14,14 @@ script = ExtResource("1_5ukbc")
 scale = Vector2(0.308564, 0.308564)
 texture = ExtResource("1_v7n0f")
 
-[node name="Light" type="Sprite2D" parent="."]
-texture = ExtResource("2_6t2gu")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_j8vot")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 3.84
+shadow_enabled = true
+texture = ExtResource("4_rnyau")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
