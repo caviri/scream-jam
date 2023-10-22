@@ -1,19 +1,63 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcr78a60o5s0x"]
+[gd_scene load_steps=11 format=3 uid="uid://bcr78a60o5s0x"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_kfol5"]
 [ext_resource type="Texture2D" uid="uid://cjb3ycbk8h5p" path="res://art/gui/gameOver.png" id="2_35bnv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygs8y"]
-bg_color = Color(0.0627451, 0.34902, 0, 0.521569)
+bg_color = Color(0.0627451, 0.34902, 0, 0.705882)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usbn1"]
 bg_color = Color(0, 0.443137, 0.196078, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u4rx"]
+bg_color = Color(0, 0.443137, 0.196078, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i325"]
+bg_color = Color(0, 0.443137, 0.196078, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggfmq"]
-bg_color = Color(0.529412, 0.054902, 0.0745098, 0.568627)
+bg_color = Color(0.529412, 0.054902, 0.0745098, 0.705882)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrpnk"]
 bg_color = Color(0.521569, 0.0784314, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kv1n"]
+bg_color = Color(0.521569, 0.0784314, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx7tb"]
+bg_color = Color(0.521569, 0.0784314, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kfol5")
@@ -24,21 +68,29 @@ scale = Vector2(0.595891, 0.602778)
 texture = ExtResource("2_35bnv")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 345.0
-offset_top = 352.0
-offset_right = 537.0
-offset_bottom = 457.0
+offset_left = 377.0
+offset_top = 350.0
+offset_right = 569.0
+offset_bottom = 455.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ygs8y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_usbn1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8u4rx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0i325")
 text = "PLAY"
 
 [node name="Die" type="Button" parent="."]
-offset_left = 603.0
-offset_top = 354.0
-offset_right = 795.0
-offset_bottom = 459.0
+offset_left = 591.0
+offset_top = 352.0
+offset_right = 783.0
+offset_bottom = 457.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ggfmq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mrpnk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7kv1n")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sx7tb")
 text = "DIE"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

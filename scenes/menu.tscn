@@ -1,20 +1,66 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5x2nk1x8uo71"]
+[gd_scene load_steps=12 format=3 uid="uid://c5x2nk1x8uo71"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nmfvj"]
 [ext_resource type="Texture2D" uid="uid://b8y47ovcwmdao" path="res://art/gui/menuImg.png" id="2_8eaef"]
 [ext_resource type="AudioStream" uid="uid://b8dbjqft5qacf" path="res://art/sounds/inro_menu.wav" id="2_q6yph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o5nt"]
-bg_color = Color(0.06, 0.34, 0, 0.52)
+bg_color = Color(0.0588235, 0.341176, 0, 0.705882)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr1yd"]
-bg_color = Color(0, 0.44, 0.19, 1)
+bg_color = Color(0, 0.439216, 0.188235, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_660r5"]
+bg_color = Color(0, 0.439216, 0.188235, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2c05"]
+bg_color = Color(0, 0.439216, 0.188235, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wifwt"]
-bg_color = Color(0.52, 0.05, 0.07, 0.56)
+bg_color = Color(0.521569, 0.0509804, 0.0705882, 0.705882)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp3nu"]
-bg_color = Color(0.52, 0.07, 0, 1)
+bg_color = Color(0.521569, 0.0705882, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2603"]
+bg_color = Color(0.521569, 0.0705882, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwfa1"]
+bg_color = Color(0.521569, 0.0705882, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nmfvj")
@@ -25,21 +71,29 @@ scale = Vector2(0.607407, 0.607407)
 texture = ExtResource("2_8eaef")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 364.0
-offset_top = 305.0
-offset_right = 556.0
-offset_bottom = 410.0
+offset_left = 385.0
+offset_top = 302.0
+offset_right = 577.0
+offset_bottom = 407.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_1o5nt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mr1yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_660r5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l2c05")
 text = "PLAY"
 
 [node name="Die" type="Button" parent="."]
-offset_left = 627.0
-offset_top = 305.0
-offset_right = 819.0
-offset_bottom = 410.0
+offset_left = 607.0
+offset_top = 303.0
+offset_right = 799.0
+offset_bottom = 408.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wifwt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hp3nu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m2603")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qwfa1")
 text = "DIE"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
