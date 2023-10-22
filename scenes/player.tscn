@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://314viho1tt7w"]
+[gd_scene load_steps=61 format=3 uid="uid://314viho1tt7w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cvuch"]
 [ext_resource type="Texture2D" uid="uid://bcpwjwe8tgfbd" path="res://art/characters/player.png" id="2_jsq5k"]
@@ -421,6 +421,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r8chj"]
+polygon = PackedVector2Array(-2, -7, 4, -7, 6, -3, 6, 7, 5, 11, -5, 11, -6, 6, -7, 1, -7, -3, -5, -6)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_cvuch")
 
@@ -456,3 +459,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_e4pmn")
 texture_over = ExtResource("5_cvqg4")
 texture_progress = ExtResource("6_bw25q")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_r8chj")
