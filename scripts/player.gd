@@ -18,6 +18,9 @@ func _physics_process(delta):
 func _process(delta):
 	total_damage = delta * DAMAGE * float(Globals.lights_up)
 	get_node("TextureProgressBar").value += total_damage
+	if get_node("TextureProgressBar").value >= get_node("TextureProgressBar").max_value:
+		Globals.lights_up = 0
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
 func player_movements(_delta):
 	
