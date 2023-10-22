@@ -12,6 +12,7 @@ var switches: Array[Node]
 var target_switch: Node
 
 func _ready():
+	$AnimatedSprite2D.play(\"nene_caca\")
 	switches = get_tree().get_nodes_in_group(\"area_switchs\")
 	select_target_switch()
 	
@@ -120,11 +121,11 @@ wait_time = 2.0
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -17)
-scale = Vector2(4.84375, 5.40625)
+position = Vector2(-2, -29)
+scale = Vector2(8.60156, 9.60045)
 sprite_frames = SubResource("SpriteFrames_xv8bx")
 animation = &"nene_caca"
-frame_progress = 0.644253
+frame_progress = 0.927761
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
