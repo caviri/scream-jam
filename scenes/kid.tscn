@@ -38,8 +38,8 @@ func _on_cooldown_timeout():
 	select_target_switch()
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
-size = Vector2(92, 92)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7lu5"]
+radius = 31.4006
 
 [node name="kid" type="CharacterBody2D"]
 script = SubResource("GDScript_qxhbh")
@@ -49,12 +49,11 @@ scale = Vector2(0.228, 0.228)
 texture = ExtResource("1_ufwvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kimlc")
+shape = SubResource("CircleShape2D_c7lu5")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 16.0
 target_desired_distance = 100.0
-debug_enabled = true
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 2.0

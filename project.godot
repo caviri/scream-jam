@@ -20,7 +20,7 @@ Globals="*res://scripts/globals.gd"
 
 [navigation]
 
-2d/default_edge_connection_margin=16
+2d/default_edge_connection_margin=12
 
 [rendering]
 
