@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://35bidx5ifvad"]
+[gd_scene load_steps=13 format=3 uid="uid://35bidx5ifvad"]
 
 [ext_resource type="Texture2D" uid="uid://0ual5g8upbcp" path="res://art/characters/pngegg.png" id="1_ufwvf"]
+[ext_resource type="Texture2D" uid="uid://bopsv48h3xik2" path="res://art/characters/slime.png" id="2_2vku4"]
 
 [sub_resource type="GDScript" id="GDScript_qxhbh"]
 script/source = "extends CharacterBody2D
@@ -11,6 +12,7 @@ var switches: Array[Node]
 var target_switch: Node
 
 func _ready():
+	$AnimatedSprite2D.play(\"nene_caca\")
 	switches = get_tree().get_nodes_in_group(\"area_switchs\")
 	select_target_switch()
 	
@@ -38,27 +40,91 @@ func _on_cooldown_timeout():
 	select_target_switch()
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kimlc"]
-size = Vector2(92, 92)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7lu5"]
+radius = 31.4006
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf0pi"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhcm"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jetms"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amex0"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoxf5"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qhcj"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rosih"]
+atlas = ExtResource("2_2vku4")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xv8bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf0pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jetms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amex0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoxf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qhcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rosih")
+}],
+"loop": true,
+"name": &"nene_caca",
+"speed": 10.0
+}]
 
 [node name="kid" type="CharacterBody2D"]
 script = SubResource("GDScript_qxhbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.228, 0.228)
 texture = ExtResource("1_ufwvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kimlc")
+shape = SubResource("CircleShape2D_c7lu5")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 16.0
 target_desired_distance = 100.0
-debug_enabled = true
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -29)
+scale = Vector2(8.60156, 9.60045)
+sprite_frames = SubResource("SpriteFrames_xv8bx")
+animation = &"nene_caca"
+frame_progress = 0.927761
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
