@@ -54,15 +54,9 @@ offset_right = 87.0
 offset_bottom = -19.0
 text = "DIE"
 
-[node name="kid" parent="." instance=ExtResource("2_il31o")]
-position = Vector2(35, 6)
-scale = Vector2(0.1, 0.1)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(0, -1)
 navigation_polygon = SubResource("NavigationPolygon_qlap0")
-
-[node name="player" parent="NavigationRegion2D" instance=ExtResource("5_esyff")]
 
 [node name="Area2D" parent="." instance=ExtResource("4_i8l8d")]
 position = Vector2(-13, -161)
@@ -87,5 +81,12 @@ scale = Vector2(0.15, 0.15)
 [node name="Area2D5" parent="." instance=ExtResource("4_i8l8d")]
 position = Vector2(-287, 161)
 scale = Vector2(0.15, 0.15)
+
+[node name="kid" parent="." instance=ExtResource("2_il31o")]
+position = Vector2(35, 6)
+scale = Vector2(0.1, 0.1)
+
+[node name="player" parent="." instance=ExtResource("5_esyff")]
+position = Vector2(0, -1)
 
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]

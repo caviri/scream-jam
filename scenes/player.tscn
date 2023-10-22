@@ -1,8 +1,11 @@
-[gd_scene load_steps=57 format=3 uid="uid://314viho1tt7w"]
+[gd_scene load_steps=60 format=3 uid="uid://314viho1tt7w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cvuch"]
 [ext_resource type="Texture2D" uid="uid://bcpwjwe8tgfbd" path="res://art/characters/player.png" id="2_jsq5k"]
 [ext_resource type="AudioStream" uid="uid://duxy34koijjvq" path="res://art/sounds/footstep.wav" id="3_atnab"]
+[ext_resource type="Texture2D" uid="uid://dmfel0pjqadlw" path="res://art/gui/underbar.png" id="4_e4pmn"]
+[ext_resource type="Texture2D" uid="uid://cbiflp3y5nkal" path="res://art/gui/overbar.png" id="5_cvqg4"]
+[ext_resource type="Texture2D" uid="uid://drvlceb6r2b6i" path="res://art/gui/moneybar.png" id="6_bw25q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5icj"]
 radius = 6.0
@@ -426,7 +429,7 @@ position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_e5icj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(-2, -6)
 sprite_frames = SubResource("SpriteFrames_bclvy")
 animation = &"back_attack"
 
@@ -439,3 +442,17 @@ volume_db = -20.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 250.0
+offset_top = -149.0
+offset_right = 276.0
+offset_bottom = -9.0
+max_value = 200.0
+step = 0.0
+value = 37.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("4_e4pmn")
+texture_over = ExtResource("5_cvqg4")
+texture_progress = ExtResource("6_bw25q")
