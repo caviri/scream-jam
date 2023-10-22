@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://beribp4g75otq"]
+
+[ext_resource type="PackedScene" uid="uid://dfdyrhbi4orxy" path="res://scenes/dungeon.tscn" id="1_5pjhu"]
+[ext_resource type="PackedScene" uid="uid://314viho1tt7w" path="res://scenes/player.tscn" id="2_7a78c"]
+
+[node name="Level" type="Node2D"]
+
+[node name="dungeon" parent="." instance=ExtResource("1_5pjhu")]
+
+[node name="player" parent="." instance=ExtResource("2_7a78c")]
