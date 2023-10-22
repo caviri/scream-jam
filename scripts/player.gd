@@ -2,13 +2,22 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
+const DAMAGE: float = 1
+
 var current_dir = "none"
+var time: float = 0
+var total_damage: float
 
 func _ready():
+	get_node("TextureProgressBar").value = 0
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
 	player_movements(delta)
+	
+func _process(delta):
+	total_damage = delta * DAMAGE * float(Globals.lights_up)
+	get_node("TextureProgressBar").value += total_damage
 	
 func player_movements(_delta):
 	
