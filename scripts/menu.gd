@@ -16,4 +16,4 @@ func _on_die_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/house.tscn")
+	get_tree().change_scene_to_file("res://scenes/video_intro.tscn")
