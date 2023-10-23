@@ -9,11 +9,9 @@ func _ready():
 	for switch in switches:
 		switch.connect("on_off_change", _on_switch_state_changed)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
 
 func _on_die_pressed():
 	get_tree().quit()

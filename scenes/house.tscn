@@ -86,11 +86,11 @@ position = Vector2(35, -22)
 scale = Vector2(0.15, 0.15)
 
 [node name="kid" parent="." instance=ExtResource("2_il31o")]
-position = Vector2(35, 6)
+position = Vector2(2.27374e-13, -15)
 scale = Vector2(0.1, 0.1)
 
 [node name="player" parent="." instance=ExtResource("5_esyff")]
-position = Vector2(0, -1)
+position = Vector2(0, 33)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_njhvi")

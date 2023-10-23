@@ -15,6 +15,9 @@ func _ready():
 func _physics_process(delta):
 	player_movements(delta)
 	
+	if Input.is_action_pressed("esc"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	
 func _process(delta):
 	total_damage = delta * DAMAGE * float(Globals.lights_up)
 	get_node("TextureProgressBar").value += total_damage
