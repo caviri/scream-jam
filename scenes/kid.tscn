@@ -18,6 +18,10 @@ func _ready():
 	
 func _physics_process(_delta):
 	var next_path_position: Vector2 = $NavigationAgent2D.get_next_path_position()
+	var noise_x = randi_range(-1,1)
+	var noise_y = randi_range(-1,1)
+	next_path_position.x += noise_x
+	next_path_position.y += noise_y
 	var direction: Vector2 = (next_path_position - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()
