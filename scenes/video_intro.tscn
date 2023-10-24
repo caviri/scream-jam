@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbvx550fptd0l"]
+
+[ext_resource type="Script" path="res://scripts/video_intro.gd" id="1_4b82r"]
+[ext_resource type="VideoStream" path="res://art/video/intro.ogv" id="2_gh7lu"]
+
+[node name="video_intro" type="Node2D"]
+script = ExtResource("1_4b82r")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1152.0
+offset_bottom = 656.0
+stream = ExtResource("2_gh7lu")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 38.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

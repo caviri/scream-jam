@@ -91,7 +91,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ggfmq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mrpnk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7kv1n")
 theme_override_styles/focus = SubResource("StyleBoxFlat_sx7tb")
-text = "DIE"
+text = "GO 
+TO SLEEP"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Die" to="." method="_on_die_pressed"]
