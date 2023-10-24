@@ -1,10 +1,26 @@
-# SCREAM JAM
+# Those Damn Lights 
 
-## Resources for Dev
+> Hola, ¿Te parece que es fácil ser un Vampiro? Illo pues prueba a ser un PADREVAMPIRO. 
 
-- Art: https://game-endeavor.itch.io/mystic-woods
+> Hello, do you think it's easy to be a Vampire? Illo, try being a VAMPIREDAD.
 
-## Tutorials
+Source code of a videogame created in 48hours for the SCREAN JAM at Itch.io
 
-- https://www.youtube.com/watch?v=pBoXqW4RykE&ab_channel=DevWorm
+
+Check it out here: 
+	
+
+
+Credits:
+	Raul: path tracking wizard
+	Kato: vampiric character designer & git gatekeeper
+	Ana: map design officer
+	Patrick: AI enthusiast
+	Kiko: copy and paste engineer 
+	Carlos: vampiric music composer 
+	Espe: chief menu designer 
+	Ale: main baby caretaker 
+	Paco: emotional assistance 
+	Cata: coffee manager and support 
+	Maya: chief procrastination promoter
  
